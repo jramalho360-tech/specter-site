@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specter Security | Offensive Security & Pentest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #050505; color: #e5e5e5; font-family: 'Courier New', Courier, monospace; }
+        .glitch { color: #00ffcc; font-weight: bold; text-shadow: 0 0 5px #00ffcc; }
+        .border-neon { border-color: #00ffcc; box-shadow: 0 0 10px rgba(0, 255, 204, 0.2); }
+        .btn-primary { background-color: #00ffcc; color: #000; transition: all 0.3s; }
+        .btn-primary:hover { background-color: #00ccaa; box-shadow: 0 0 15px #00ffcc; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="border-b border-gray-800 p-6 flex justify-between items-center sticky top-0 bg-[#050505] z-50">
+        <div class="text-2xl font-black tracking-tighter">
+            SPECTER<span class="glitch">_SECURITY</span>
+        </div>
+        <div class="hidden md:flex space-x-6 text-sm font-bold">
+            <a href="#services" class="hover:text-[#00ffcc] transition-colors">Serviços</a>
+            <a href="#methodology" class="hover:text-[#00ffcc] transition-colors">Metodologia</a>
+            <a href="#about" class="hover:text-[#00ffcc] transition-colors">Sobre Nós</a>
+            <a href="#faq" class="hover:text-[#00ffcc] transition-colors">FAQ</a>
+        </div>
+        <a href="mailto:contato@spectersecurity.com.br" class="hidden md:block border border-[#00ffcc] text-[#00ffcc] px-4 py-2 hover:bg-[#00ffcc] hover:text-black transition-colors text-sm font-bold">
+            Falar com Especialista
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex flex-col justify-center items-center text-center px-4 py-24 md:py-32">
+        <div class="inline-block px-3 py-1 mb-6 border border-gray-800 text-xs text-gray-400">
+            [+] SECURE YOUR INFRASTRUCTURE
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">Invisível para o inimigo.<br> <span class="glitch">Implacável na defesa.</span></h1>
+        <p class="text-gray-400 max-w-2xl mb-10 text-lg">
+            A Specter Security é uma consultoria de elite especializada em Segurança Ofensiva e Testes de Invasão (Pentest). 
+            Nós hackeamos sua empresa antes que os cibercriminosos o façam.
+        </p>
+        <div class="flex space-x-4">
+            <a href="#services" class="btn-primary px-8 py-4 font-bold text-lg rounded-sm uppercase tracking-wide">
+                Nossas Soluções
+            </a>
+        </div>
+    </main>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-[#0a0a0a] py-20 px-6 border-t border-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">Nossos <span class="glitch">Serviços</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 border border-gray-800 bg-[#050505] hover:border-neon transition-all">
+                    <h3 class="text-xl font-bold mb-3 text-white">01. Web Pentest</h3>
+                    <p class="text-gray-400 text-sm">Simulação de ataques avançados contra suas aplicações web. Mapeamos falhas críticas como SQLi, XSS, quebra de autenticação e vazamento de dados de clientes, seguindo as diretrizes OWASP Top 10.</p>
+                </div>
+                <div class="p-8 border border-gray-800 bg-[#050505] hover:border-neon transition-all">
+                    <h3 class="text-xl font-bold mb-3 text-white">02. API Security</h3>
+                    <p class="text-gray-400 text-sm">A espinha dorsal das aplicações modernas. Realizamos testes profundos em seus endpoints para garantir que não haja falhas de lógica (BOLA, IDOR) ou exposição indevida de dados corporativos.</p>
+                </div>
+                <div class="p-8 border border-gray-800 bg-[#050505] hover:border-neon transition-all">
+                    <h3 class="text-xl font-bold mb-3 text-white">03. Red Team Ops</h3>
+                    <p class="text-gray-400 text-sm">Simulações adversariais completas. Testamos não apenas a sua tecnologia, mas a resiliência humana da sua corporação com campanhas de engenharia social (Phishing) e intrusão furtiva.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="methodology" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">Como nós <span class="glitch">Operamos</span></h2>
+            <div class="space-y-6">
+                <div class="flex items-start">
+                    <div class="text-[#00ffcc] font-bold text-xl mr-4">[1]</div>
+                    <div>
+                        <h4 class="font-bold text-lg">Reconhecimento (Recon)</h4>
+                        <p class="text-gray-400 text-sm">Mapeamos toda a sua superfície de ataque pública (OSINT) e infraestrutura exposta sem tocar nos seus servidores de forma agressiva.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="text-[#00ffcc] font-bold text-xl mr-4">[2]</div>
+                    <div>
+                        <h4 class="font-bold text-lg">Análise de Vulnerabilidades</h4>
+                        <p class="text-gray-400 text-sm">Nossos especialistas, auxiliados por orquestração de Inteligência Artificial, varrem seus sistemas em busca de configurações incorretas e falhas lógicas zero-day.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="text-[#00ffcc] font-bold text-xl mr-4">[3]</div>
+                    <div>
+                        <h4 class="font-bold text-lg">Exploração (Exploitation)</h4>
+                        <p class="text-gray-400 text-sm">Validamos as vulnerabilidades simulando as ações de um atacante real para comprovar o risco (sem causar danos ou indisponibilidade aos seus sistemas).</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="text-[#00ffcc] font-bold text-xl mr-4">[4]</div>
+                    <div>
+                        <h4 class="font-bold text-lg">Reporte e Remediação</h4>
+                        <p class="text-gray-400 text-sm">Entregamos um relatório técnico e executivo completo, com Prova de Conceito (PoC) e instruções exatas de como seus desenvolvedores devem corrigir o código.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Arsenal Section -->
+    <section class="bg-[#050505] py-20 px-6 border-t border-gray-900">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Nosso <span class="glitch">Arsenal Tecnológico</span></h2>
+            <p class="text-gray-400 mb-12 max-w-2xl mx-auto">Não dependemos apenas de análises manuais. Unimos os ecossistemas de segurança ofensiva mais avançados do mundo com orquestração de Inteligência Artificial para garantir cobertura total.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 border border-gray-800 bg-[#0a0a0a]">
+                    <h4 class="text-[#00ffcc] font-bold mb-2">OffSec & Kali Linux</h4>
+                    <p class="text-xs text-gray-400">Utilizamos o padrão ouro da indústria de Pentest, operando com um arsenal completo de mais de 600 ferramentas de exploração, análise forense e engenharia reversa para emular ataques reais.</p>
+                </div>
+                <div class="p-6 border border-gray-800 bg-[#0a0a0a]">
+                    <h4 class="text-[#00ffcc] font-bold mb-2">Cyber Threat Intelligence & IA</h4>
+                    <p class="text-xs text-gray-400">Empregamos motores avançados de Inteligência Artificial para orquestração de testes e identificação de anomalias lógicas em frações de segundo, superando a precisão de ferramentas de segurança tradicionais.</p>
+                </div>
+                <div class="p-6 border border-gray-800 bg-[#0a0a0a]">
+                    <h4 class="text-[#00ffcc] font-bold mb-2">OWASP Compliance</h4>
+                    <p class="text-xs text-gray-400">Nossos testes são estritamente mapeados contra a matriz de riscos globais (OWASP Top 10 Web e API), garantindo que as auditorias atendam às mais altas exigências do mercado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="bg-[#0a0a0a] py-20 px-6 border-t border-b border-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">Perguntas <span class="glitch">Frequentes</span></h2>
+            <div class="space-y-6">
+                <div class="border border-gray-800 p-6 bg-[#050505]">
+                    <h4 class="font-bold text-white mb-2">Um Pentest vai derrubar o meu site?</h4>
+                    <p class="text-gray-400 text-sm">Não. Nossos testes são cuidadosamente controlados e não realizamos ataques de Negação de Serviço (DDoS) a menos que explicitamente solicitado pelo cliente. A estabilidade do seu ambiente é nossa prioridade.</p>
+                </div>
+                <div class="border border-gray-800 p-6 bg-[#050505]">
+                    <h4 class="font-bold text-white mb-2">Vocês testam APIs não documentadas?</h4>
+                    <p class="text-gray-400 text-sm">Sim. Fazemos engenharia reversa de tráfego web e mobile para descobrir e testar APIs ocultas (Shadow APIs) que muitas vezes são os maiores vetores de ataque.</p>
+                </div>
+                <div class="border border-gray-800 p-6 bg-[#050505]">
+                    <h4 class="font-bold text-white mb-2">O que eu recebo ao final do serviço?</h4>
+                    <p class="text-gray-400 text-sm">Um relatório executivo para a diretoria (traduzindo o risco para o negócio) e um relatório técnico detalhado para a equipe de TI, contendo as provas de invasão e os passos para correção.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="p-10 text-center text-sm text-gray-600 bg-[#050505]">
+        <div class="mb-4 text-[#00ffcc] font-bold text-lg tracking-widest">SPECTER_SECURITY</div>
+        <p>&copy; 2026 Specter Security. Todos os direitos reservados.</p>
+        <p class="mt-2 text-xs">CNPJ: 59.309.653/0001-XX | Campo Limpo Paulista, SP</p>
+    </footer>
+
+</body>
+</html>
