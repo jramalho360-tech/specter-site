@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Specter Security | Offensive Security & Pentest</title>
+    
+    <!-- SEO e OpenGraph (Compartilhamento WhatsApp/LinkedIn) -->
+    <meta name="description" content="Specter Security: Consultoria de elite em Segurança Ofensiva e PTaaS (Pentest-as-a-Service). Proteja sua infraestrutura antes que ocorra um incidente.">
+    <meta property="og:title" content="Specter Security | Offensive Security & Pentest">
+    <meta property="og:description" content="Auditorias avançadas, Red Team Ops e Hardening de infraestrutura corporativa.">
+    <!-- Usando uma imagem matadora de código verde para o preview do link -->
+    <meta property="og:image" content="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="http://spectersecurity.com.br">
+    <meta property="og:type" content="website">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -222,7 +232,6 @@
                         </div>
                     </div>
                     
-                    <!-- New Item 7: Engenharia Reversa -->
                     <div class="flex flex-col md:flex-row items-center justify-between w-full relative">
                         <div class="w-full md:w-5/12 glass-card p-6 border-l-4 border-hacker-400 hover:scale-105 transition-transform duration-300">
                             <h4 class="font-bold text-white text-lg mb-2">> Engenharia Reversa</h4>
@@ -234,7 +243,6 @@
                         <div class="w-full md:w-5/12 hidden md:block"></div>
                     </div>
                     
-                    <!-- New Item 8: Code Review / SAST -->
                     <div class="flex flex-col md:flex-row items-center justify-between w-full relative">
                         <div class="w-full md:w-5/12 hidden md:block"></div>
                         <div class="hidden md:flex w-6 h-6 absolute left-1/2 transform -translate-x-1/2 items-center justify-center bg-[#050505] border-2 border-hacker-400 rounded-full shadow-[0_0_15px_rgba(0,255,204,0.6)] z-10">
@@ -257,42 +265,36 @@
             
             <div class="relative flex flex-col space-y-8 md:space-y-4">
                 
-                <!-- Step 1 -->
                 <div class="w-full md:w-[50%] md:ml-0 glass-card p-6 border-l-4 border-hacker-400 relative hover:-translate-y-1 transition-transform">
                     <div class="absolute -left-[20px] -top-[20px] w-10 h-10 bg-hacker-900 border-2 border-hacker-400 rounded-full flex items-center justify-center font-bold text-hacker-400 shadow-[0_0_15px_rgba(0,255,204,0.5)] z-10">1</div>
                     <h4 class="font-bold text-white mb-2 ml-4 text-neon">Reconhecimento (OSINT)</h4>
                     <p class="text-gray-400 text-sm ml-4">Mapeamento inicial da superfície de ataque, identificando portas de entrada e dados expostos da corporação.</p>
                 </div>
 
-                <!-- Step 2 -->
                 <div class="w-full md:w-[50%] md:ml-[10%] glass-card p-6 border-l-4 border-hacker-400 relative hover:-translate-y-1 transition-transform">
                     <div class="absolute -left-[20px] -top-[20px] w-10 h-10 bg-hacker-900 border-2 border-hacker-400 rounded-full flex items-center justify-center font-bold text-hacker-400 shadow-[0_0_15px_rgba(0,255,204,0.5)] z-10">2</div>
                     <h4 class="font-bold text-white mb-2 ml-4 text-neon">Scanning e Enumeração</h4>
                     <p class="text-gray-400 text-sm ml-4">Varredura profunda de redes e aplicações para encontrar CVEs, endpoints desprotegidos e configurações inseguras.</p>
                 </div>
 
-                <!-- Step 3 -->
                 <div class="w-full md:w-[50%] md:ml-[20%] glass-card p-6 border-l-4 border-hacker-400 relative hover:-translate-y-1 transition-transform">
                     <div class="absolute -left-[20px] -top-[20px] w-10 h-10 bg-hacker-900 border-2 border-hacker-400 rounded-full flex items-center justify-center font-bold text-hacker-400 shadow-[0_0_15px_rgba(0,255,204,0.5)] z-10">3</div>
                     <h4 class="font-bold text-white mb-2 ml-4 text-neon">Exploração (Exploitation)</h4>
                     <p class="text-gray-400 text-sm ml-4">Injeção de payloads e bypass de segurança (WAFs/Firewalls) para comprometer o sistema alvo e validar a falha.</p>
                 </div>
 
-                <!-- Step 4 -->
                 <div class="w-full md:w-[50%] md:ml-[30%] glass-card p-6 border-l-4 border-hacker-400 relative hover:-translate-y-1 transition-transform">
                     <div class="absolute -left-[20px] -top-[20px] w-10 h-10 bg-hacker-900 border-2 border-hacker-400 rounded-full flex items-center justify-center font-bold text-hacker-400 shadow-[0_0_15px_rgba(0,255,204,0.5)] z-10">4</div>
                     <h4 class="font-bold text-white mb-2 ml-4 text-neon">Escalada de Privilégios</h4>
                     <p class="text-gray-400 text-sm ml-4">Movimentação lateral dentro da rede para obter acesso root/admin, testando o verdadeiro impacto do vazamento.</p>
                 </div>
 
-                <!-- Step 5 -->
                 <div class="w-full md:w-[50%] md:ml-[40%] glass-card p-6 border-l-4 border-hacker-400 relative hover:-translate-y-1 transition-transform">
                     <div class="absolute -left-[20px] -top-[20px] w-10 h-10 bg-hacker-900 border-2 border-hacker-400 rounded-full flex items-center justify-center font-bold text-hacker-400 shadow-[0_0_15px_rgba(0,255,204,0.5)] z-10">5</div>
                     <h4 class="font-bold text-white mb-2 ml-4 text-neon">Reporte e Hardening</h4>
                     <p class="text-gray-400 text-sm ml-4">Entrega do Dossiê Técnico e Executivo, contendo provas de invasão (PoCs) e o plano de ação exato para remediação.</p>
                 </div>
 
-                <!-- Step 6 -->
                 <div class="w-full md:w-[50%] md:ml-[50%] glass-card p-6 border-l-4 border-hacker-400 relative hover:-translate-y-1 transition-transform bg-hacker-900/30">
                     <div class="absolute -left-[20px] -top-[20px] w-10 h-10 bg-hacker-400 border-2 border-white rounded-full flex items-center justify-center font-bold text-black shadow-[0_0_20px_rgba(0,255,204,0.8)] z-10">6</div>
                     <h4 class="font-bold text-white mb-2 ml-4">Reteste Final (Certificação)</h4>
@@ -373,6 +375,11 @@
             <p class="text-gray-600 text-sm">CNPJ: 59.701.640/0001-71</p>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5562994585837?text=Olá,%20gostaria%20de%20solicitar%20uma%20auditoria%20de%20segurança." target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:scale-110 transition-transform z-50">
+        <i class="ph-fill ph-whatsapp text-3xl"></i>
+    </a>
 
     <!-- Matrix Canvas Script -->
     <script>
