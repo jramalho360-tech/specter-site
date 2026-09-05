@@ -3,285 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Specter Security | Blindagem Corporativa & Pentest</title>
+    <title>Specter Security | Offensive Security & Pentest</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] },
-                    colors: { brand: { 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 900: '#0c4a6e' }, dark: '#030712', card: '#111827' }
+                    fontFamily: { mono: ['Fira Code', 'monospace'] },
+                    colors: { hacker: { 400: '#00ffcc', 500: '#00ccaa', 900: '#003322' }, dark: '#050505', card: '#0a0a0a' }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #030712; color: #f9fafb; overflow-x: hidden; }
-        .glass-card { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .text-gradient { background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .bg-glow { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, rgba(0,0,0,0) 70%); top: -200px; right: -200px; z-index: -1; border-radius: 50%; filter: blur(50px); }
-        .glow-box { box-shadow: 0 0 20px rgba(56, 189, 248, 0.15); transition: box-shadow 0.3s ease; }
-        .glow-box:hover { box-shadow: 0 0 30px rgba(56, 189, 248, 0.3); }
+        body { background-color: #050505; color: #e5e5e5; font-family: 'Fira Code', monospace; overflow-x: hidden; }
+        .glass-card { background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(0, 255, 204, 0.15); }
+        .text-neon { color: #00ffcc; text-shadow: 0 0 8px rgba(0, 255, 204, 0.6); }
+        .glow-box { box-shadow: 0 0 15px rgba(0, 255, 204, 0.05); transition: all 0.3s ease; }
+        .glow-box:hover { box-shadow: 0 0 25px rgba(0, 255, 204, 0.2); border-color: #00ffcc; transform: translateY(-5px); }
+        .bg-grid { background-image: linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px); background-size: 30px 30px; }
+        
+        /* Terminal Cursor Animation */
+        .cursor-blink::after { content: '_'; animation: blink 1s step-start infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-500 selection:text-white">
-    <div class="bg-glow"></div>
+<body class="antialiased selection:bg-hacker-500 selection:text-black bg-grid">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 glass-card border-b-0 border-white/5">
+    <nav class="fixed w-full z-50 glass-card border-b-0 border-hacker-400/20">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <div class="flex items-center gap-2">
-                <i class="ph-fill ph-shield-check text-brand-400 text-3xl"></i>
-                <span class="text-xl font-display font-bold tracking-wide">SPECTER<span class="text-brand-400">SECURITY</span></span>
+                <span class="text-xl font-bold tracking-tighter text-white">
+                    root@specter<span class="text-neon">:~#</span>
+                </span>
             </div>
-            <div class="hidden md:flex gap-6 text-sm font-medium text-gray-300">
-                <a href="#solucoes" class="hover:text-white transition-colors">Soluções</a>
-                <a href="#metodologia" class="hover:text-white transition-colors">Metodologia</a>
-                <a href="#arsenal" class="hover:text-white transition-colors">Arsenal</a>
-                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+            <div class="hidden md:flex gap-8 text-sm text-gray-400">
+                <a href="#solucoes" class="hover:text-neon transition-colors">[ Soluções ]</a>
+                <a href="#arsenal" class="hover:text-neon transition-colors">[ Arsenal ]</a>
+                <a href="#metodologia" class="hover:text-neon transition-colors">[ Operação ]</a>
+                <a href="#faq" class="hover:text-neon transition-colors">[ FAQ ]</a>
             </div>
-            <a href="#contato" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-500 transition-all shadow-[0_0_15px_rgba(14,165,233,0.3)]">
-                Falar com Especialista
+            <a href="#contato" class="hidden md:inline-flex items-center justify-center px-6 py-2 text-sm font-bold text-black bg-hacker-400 rounded hover:bg-white hover:text-black transition-all shadow-[0_0_15px_rgba(0,255,204,0.4)] uppercase">
+                > EXECUTE_AUDIT
             </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <main class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <main class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div class="max-w-2xl relative z-10">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card text-brand-400 text-xs font-semibold uppercase tracking-wider mb-8 border-brand-400/20">
-                    <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span></span>
-                    Pentest-as-a-Service (PTaaS)
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-hacker-900/50 border border-hacker-400/30 text-hacker-400 text-xs font-bold mb-8">
+                    <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full bg-hacker-400 opacity-75"></span><span class="relative inline-flex h-2 w-2 bg-hacker-400"></span></span>
+                    STATUS: ACTIVE_PENTEST
                 </div>
-                <h1 class="font-display text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white cursor-blink">
                     Invisível para o inimigo.<br>
-                    <span class="text-gradient">Implacável na defesa.</span>
+                    <span class="text-neon">Implacável na defesa.</span>
                 </h1>
-                <p class="text-gray-400 text-lg leading-relaxed mb-10">
-                    A Specter Security é uma consultoria de elite em Segurança Ofensiva. Nós identificamos falhas críticas (OWASP) na sua infraestrutura e entregamos a solução técnica exata para blindar os seus dados antes que ocorra um incidente.
+                <p class="text-gray-400 text-base leading-relaxed mb-10">
+                    A Specter Security é uma consultoria de elite em Segurança Ofensiva. Nós identificamos falhas críticas (OWASP Top 10) na sua infraestrutura e entregamos a solução técnica exata para blindar os seus dados antes que ocorra um incidente.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contato" class="inline-flex justify-center items-center px-8 py-4 text-base font-semibold text-white bg-brand-600 rounded-lg hover:bg-brand-500 transition-all shadow-[0_0_20px_rgba(14,165,233,0.4)]">
-                        Iniciar Auditoria
-                    </a>
-                    <a href="#solucoes" class="inline-flex justify-center items-center px-8 py-4 text-base font-semibold text-gray-300 glass-card rounded-lg hover:text-white hover:bg-gray-800 transition-all">
-                        Conhecer Serviços
+                    <a href="#contato" class="inline-flex justify-center items-center px-8 py-4 text-base font-bold text-black bg-hacker-400 hover:bg-white transition-all shadow-[0_0_20px_rgba(0,255,204,0.4)] uppercase">
+                        > INICIAR AUDITORIA
                     </a>
                 </div>
             </div>
-            <div class="relative hidden lg:flex justify-center items-center">
-                <!-- 3D/Tech Representation -->
-                <div class="absolute inset-0 bg-gradient-to-tr from-brand-900/30 to-transparent rounded-2xl transform rotate-6 scale-105 z-0 blur-lg"></div>
-                <!-- Premium Dark Tech Abstract Render -->
-                <img src="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="3D Tech Security" class="relative z-10 rounded-2xl shadow-2xl border border-gray-800 object-cover h-[500px] w-[90%] opacity-90">
-                <!-- Floating Data Card -->
-                <div class="absolute -bottom-10 -left-10 z-20 glass-card p-6 rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-brand-500/30 flex items-center gap-5 transform -rotate-2">
-                    <div class="h-14 w-14 rounded-full bg-brand-500/20 flex items-center justify-center border border-brand-500/50">
-                        <i class="ph-fill ph-lock-key text-brand-400 text-3xl"></i>
-                    </div>
-                    <div>
-                        <p class="text-sm text-gray-400 font-medium">Arquitetura</p>
-                        <p class="text-white font-bold text-lg">100% Blindada</p>
-                    </div>
-                </div>
+            
+            <div class="relative hidden lg:block">
+                <div class="absolute inset-0 bg-hacker-400/5 rounded transform translate-x-4 translate-y-4 border border-hacker-400/20 z-0"></div>
+                <!-- Premium Hacker Image -->
+                <img src="assets/hacker.jpg" alt="Elite Hacker" class="relative z-10 shadow-2xl border border-hacker-400/40 object-cover h-[450px] w-full grayscale-[20%]">
             </div>
         </div>
     </main>
 
-    <!-- Services Section -->
-    <section id="solucoes" class="py-24 bg-gray-900/30 relative border-t border-white/5">
+    <!-- Arsenal Section (Classic Tools) -->
+    <section id="arsenal" class="py-24 border-t border-hacker-400/20 bg-[#020202]">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">Nossas <span class="text-gradient">Soluções</span></h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">Auditorias de segurança ponta a ponta projetadas para ambientes corporativos de alta complexidade.</p>
-            </div>
+            <h2 class="text-3xl font-bold mb-12 text-center text-white"><span class="text-neon">/</span> Nosso Arsenal Tecnológico</h2>
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="glass-card glow-box p-8 rounded-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <i class="ph ph-globe text-brand-400 text-4xl mb-6"></i>
-                    <h3 class="text-xl font-bold mb-3">Web Pentest</h3>
+                <div class="glass-card glow-box p-8 border-t-2 border-t-hacker-400">
+                    <i class="ph-fill ph-terminal-window text-hacker-400 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-white">Kali Linux & Burp</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
-                        Simulação avançada contra aplicações web. Mapeamos falhas críticas como SQLi e vazamento de dados, e fornecemos as diretrizes exatas de código para sua equipe corrigir cada brecha.
+                        Operamos com um arsenal completo de ferramentas de exploração e análise forense, emulando as táticas modernas de ameaças avançadas (APTs) contra a sua rede.
                     </p>
                 </div>
-                <div class="glass-card glow-box p-8 rounded-2xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-5"><i class="ph-fill ph-cpu text-8xl text-brand-400"></i></div>
-                    <i class="ph ph-plugs-connected text-brand-400 text-4xl mb-6 relative z-10"></i>
-                    <h3 class="text-xl font-bold mb-3 relative z-10">API Security</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed relative z-10">
-                        Realizamos auditorias profundas em seus endpoints para garantir que não haja falhas de lógica (BOLA, IDOR) e entregamos as arquiteturas de segurança adequadas para blindar os dados corporativos.
+                <div class="glass-card glow-box p-8 border-t-2 border-t-hacker-400">
+                    <i class="ph-fill ph-cpu text-hacker-400 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-white">Threat Intel & IA</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Empregamos motores autônomos para automatizar a orquestração de testes e construir scripts de remediação sob medida em frações de segundo.
                     </p>
                 </div>
-                <div class="glass-card glow-box p-8 rounded-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <i class="ph ph-crosshair text-brand-400 text-4xl mb-6"></i>
-                    <h3 class="text-xl font-bold mb-3">Red Team Ops</h3>
+                <div class="glass-card glow-box p-8 border-t-2 border-t-hacker-400">
+                    <i class="ph-fill ph-shield-warning text-hacker-400 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-white">OWASP Compliance</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
-                        Simulações adversariais completas. Testamos sua tecnologia e a resiliência humana da sua corporação, mapeando os riscos de intrusão silenciosa e propondo defesas estruturais.
+                        Nossos testes são mapeados contra a matriz de riscos globais (Top 10 Web e API), garantindo que as auditorias deixem sua infraestrutura imune.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Methodology Section -->
-    <section id="metodologia" class="py-24 relative border-t border-white/5">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="font-display text-3xl md:text-4xl font-bold mb-12 text-center">Como nós <span class="text-gradient">Operamos</span></h2>
-            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                    <div class="flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-gray-900 text-brand-400 font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_15px_rgba(56,189,248,0.2)]">01</div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-card p-6 rounded-2xl">
-                        <h4 class="font-bold text-xl mb-2 text-white">Reconhecimento (Recon)</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">Mapeamos toda a sua superfície de ataque pública (OSINT) e infraestrutura exposta, identificando portas de entrada invisíveis para a sua equipe.</p>
+    <!-- Services Section with Dashboard Image -->
+    <section id="solucoes" class="py-24 relative border-t border-hacker-400/20">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl font-bold mb-6 text-white"><span class="text-neon">/</span> Nossas Soluções</h2>
+                <p class="text-gray-400 mb-8">Auditorias de segurança ponta a ponta. Entregamos o relatório executivo (PoCs) e o plano de ação exato de remediação.</p>
+                
+                <div class="space-y-6">
+                    <div class="glass-card p-6 border-l-2 border-hacker-400">
+                        <h4 class="font-bold text-white text-lg mb-2">> Web Pentest</h4>
+                        <p class="text-gray-400 text-sm">Simulação avançada contra aplicações web. Mapeamos falhas críticas como SQLi e XSS, e fornecemos as diretrizes exatas de código para correção.</p>
                     </div>
-                </div>
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                    <div class="flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-gray-900 text-brand-400 font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_15px_rgba(56,189,248,0.2)]">02</div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-card p-6 rounded-2xl">
-                        <h4 class="font-bold text-xl mb-2 text-white">Exploração (Exploitation)</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">Nossos especialistas, com o apoio de Inteligência Artificial, varrem e validam vulnerabilidades simulando ataques reais para comprovar o risco (sem causar danos).</p>
+                    <div class="glass-card p-6 border-l-2 border-hacker-400">
+                        <h4 class="font-bold text-white text-lg mb-2">> API Security</h4>
+                        <p class="text-gray-400 text-sm">Auditorias profundas em endpoints para garantir a blindagem contra falhas de lógica (BOLA, IDOR, manipulação de tokens JWT).</p>
                     </div>
-                </div>
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                    <div class="flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-gray-900 text-brand-400 font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_15px_rgba(56,189,248,0.2)]">03</div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-card p-6 rounded-2xl">
-                        <h4 class="font-bold text-xl mb-2 text-white">Reporte e Remediação</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">Entregamos um relatório executivo para a diretoria e um dossiê técnico com scripts e o caminho exato para os desenvolvedores aplicarem os patches de segurança.</p>
-                    </div>
-                </div>
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                    <div class="flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-gray-900 text-brand-400 font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_15px_rgba(56,189,248,0.2)]">04</div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] glass-card p-6 rounded-2xl">
-                        <h4 class="font-bold text-xl mb-2 text-white">Reteste e Blindagem</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">Após a sua equipe aplicar as correções, realizamos uma nova bateria de validação para garantir que o ambiente está permanentemente blindado e sem falsos positivos.</p>
+                    <div class="glass-card p-6 border-l-2 border-hacker-400">
+                        <h4 class="font-bold text-white text-lg mb-2">> Red Team Ops</h4>
+                        <p class="text-gray-400 text-sm">Simulações adversariais completas. Mapeamos os riscos reais de intrusão silenciosa na sua corporação.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Arsenal Section (Restored) -->
-    <section id="arsenal" class="py-24 bg-gray-900/30 border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="font-display text-3xl md:text-4xl font-bold mb-6">Nosso <span class="text-gradient">Arsenal Tecnológico</span></h2>
-            <p class="text-gray-400 mb-16 max-w-3xl mx-auto text-lg">
-                Não dependemos apenas de análises manuais. Unimos os ecossistemas de segurança ofensiva mais avançados do mundo com orquestração de Inteligência Artificial para garantir velocidade e precisão no diagnóstico.
-            </p>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-2xl border-t-2 border-t-brand-500 flex flex-col items-center text-center">
-                    <div class="h-16 w-16 bg-gray-800 rounded-lg flex items-center justify-center mb-6">
-                        <i class="ph-fill ph-terminal-window text-3xl text-brand-400"></i>
-                    </div>
-                    <h4 class="text-white font-bold text-xl mb-3">OffSec & Padrões Ouro</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Operamos com um arsenal completo de ferramentas de exploração e análise forense (Kali Linux, Burp Suite), emulando as táticas modernas de ameaças avançadas (APTs).
-                    </p>
-                </div>
-                <div class="glass-card p-8 rounded-2xl border-t-2 border-t-brand-500 flex flex-col items-center text-center">
-                    <div class="h-16 w-16 bg-gray-800 rounded-lg flex items-center justify-center mb-6">
-                        <i class="ph-fill ph-brain text-3xl text-brand-400"></i>
-                    </div>
-                    <h4 class="text-white font-bold text-xl mb-3">Threat Intelligence & IA</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Empregamos motores de Inteligência Artificial para automatizar a orquestração de testes e acelerar a construção de scripts de remediação sob medida para a linguagem do cliente.
-                    </p>
-                </div>
-                <div class="glass-card p-8 rounded-2xl border-t-2 border-t-brand-500 flex flex-col items-center text-center">
-                    <div class="h-16 w-16 bg-gray-800 rounded-lg flex items-center justify-center mb-6">
-                        <i class="ph-fill ph-file-lock text-3xl text-brand-400"></i>
-                    </div>
-                    <h4 class="text-white font-bold text-xl mb-3">OWASP Compliance</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Nossos testes são mapeados contra a matriz de riscos globais (OWASP Top 10 Web e API), garantindo que as auditorias deixem sua infraestrutura em compliance com o mercado.
-                    </p>
-                </div>
+            <div class="relative hidden lg:block">
+                <!-- Dashboard pentest image -->
+                <div class="absolute inset-0 bg-hacker-400/5 rounded transform -translate-x-4 translate-y-4 border border-hacker-400/20 z-0"></div>
+                <img src="assets/dashboard.jpg" alt="Pentest Dashboard" class="relative z-10 shadow-2xl border border-hacker-400/40 object-cover w-full grayscale-[10%]">
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section (Restored) -->
-    <section id="faq" class="py-24 relative">
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 border-t border-hacker-400/20 bg-[#020202]">
         <div class="max-w-4xl mx-auto px-6">
-            <h2 class="font-display text-3xl md:text-4xl font-bold mb-12 text-center">Perguntas <span class="text-gradient">Frequentes</span></h2>
-            <div class="space-y-6">
-                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-brand-500">
-                    <h4 class="font-bold text-white text-lg mb-3 flex items-center gap-3">
-                        <i class="ph-fill ph-question text-brand-400 text-xl"></i>
-                        Vocês apenas apontam as falhas ou ajudam a corrigir?
-                    </h4>
-                    <p class="text-gray-400 text-sm leading-relaxed pl-8">
-                        Somos a solução ponta a ponta. Nosso relatório técnico inclui orientações detalhadas de mitigação e código de correção (patches), e ficamos à disposição para esclarecer dúvidas da sua equipe de TI durante o processo de blindagem.
-                    </p>
+            <h2 class="text-3xl font-bold mb-12 text-center text-white"><span class="text-neon">/</span> FAQ</h2>
+            <div class="space-y-4">
+                <div class="glass-card p-6 border border-hacker-400/20">
+                    <h4 class="font-bold text-white mb-2 text-neon">Q: Vocês apenas apontam as falhas ou ajudam a corrigir?</h4>
+                    <p class="text-gray-400 text-sm">A: Somos a solução ponta a ponta. Nosso relatório técnico inclui orientações detalhadas de mitigação e código de correção (patches), e ficamos à disposição para esclarecer dúvidas da equipe de TI.</p>
                 </div>
-                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-brand-500">
-                    <h4 class="font-bold text-white text-lg mb-3 flex items-center gap-3">
-                        <i class="ph-fill ph-question text-brand-400 text-xl"></i>
-                        Um Pentest vai causar lentidão ou derrubar meu site?
-                    </h4>
-                    <p class="text-gray-400 text-sm leading-relaxed pl-8">
-                        Não. Nossos testes são cuidadosamente orquestrados em janelas de manutenção acordadas. A estabilidade operacional e a segurança dos seus dados são a nossa prioridade máxima.
-                    </p>
+                <div class="glass-card p-6 border border-hacker-400/20">
+                    <h4 class="font-bold text-white mb-2 text-neon">Q: Um Pentest vai causar lentidão ou derrubar meu site?</h4>
+                    <p class="text-gray-400 text-sm">A: Não. Nossos testes são orquestrados em janelas de manutenção acordadas. A estabilidade operacional e a segurança dos seus dados são a prioridade.</p>
                 </div>
-                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-brand-500">
-                    <h4 class="font-bold text-white text-lg mb-3 flex items-center gap-3">
-                        <i class="ph-fill ph-question text-brand-400 text-xl"></i>
-                        O que exatamente eu recebo ao final do serviço?
-                    </h4>
-                    <p class="text-gray-400 text-sm leading-relaxed pl-8">
-                        Entregamos dois documentos finais: um relatório executivo para a diretoria (traduzindo o risco financeiro e reputacional) e um dossiê técnico com as provas de invasão (PoCs) e o plano de ação exato de remediação.
-                    </p>
+                <div class="glass-card p-6 border border-hacker-400/20">
+                    <h4 class="font-bold text-white mb-2 text-neon">Q: O que exatamente eu recebo ao final do serviço?</h4>
+                    <p class="text-gray-400 text-sm">A: Dois documentos finais: um relatório executivo para a diretoria (traduzindo o risco financeiro) e um dossiê técnico com as provas de invasão (PoCs) e scripts de remediação.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contato" class="py-24 relative overflow-hidden border-t border-white/5 bg-gray-900/50">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-900/20 rounded-full blur-[100px] z-0 pointer-events-none"></div>
+    <section id="contato" class="py-24 relative overflow-hidden border-t border-hacker-400/20">
         <div class="max-w-3xl mx-auto px-6 relative z-10">
             <div class="text-center mb-10">
-                <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">Inicie sua <span class="text-gradient">Blindagem</span></h2>
-                <p class="text-gray-400">Proteja seus dados corporativos antes que uma violação ocorra. Fale com nossos especialistas.</p>
+                <h2 class="text-3xl font-bold mb-4 text-white"><span class="text-neon">/</span> INICIAR_BLINDAGEM.exe</h2>
+                <p class="text-gray-400">Proteja seus dados corporativos antes que uma violação ocorra.</p>
             </div>
             
-            <form action="https://formsubmit.co/contato@spectersecurity.com.br" method="POST" class="glass-card p-8 md:p-10 rounded-2xl shadow-2xl">
+            <form action="https://formsubmit.co/contato@spectersecurity.com.br" method="POST" class="glass-card p-8 border-hacker-400/30">
                 <input type="hidden" name="_subject" value="Novo Lead - Specter Security">
                 <input type="hidden" name="_next" value="http://spectersecurity.com.br">
                 <input type="hidden" name="_captcha" value="false">
                 
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
-                        <label class="block text-sm font-medium text-gray-400 mb-2">Nome / Empresa</label>
-                        <input type="text" name="name" required class="w-full bg-gray-900/80 border border-gray-700 rounded-lg text-white p-3.5 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all placeholder-gray-600" placeholder="Sua Empresa S.A.">
+                        <label class="block text-sm font-bold text-hacker-400 mb-2">TARGET_NAME</label>
+                        <input type="text" name="name" required class="w-full bg-[#050505] border border-gray-700 text-white p-3 focus:border-hacker-400 outline-none transition-all placeholder-gray-700 font-mono" placeholder="Sua Empresa S.A.">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-400 mb-2">E-mail Corporativo</label>
-                        <input type="email" name="email" required class="w-full bg-gray-900/80 border border-gray-700 rounded-lg text-white p-3.5 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all placeholder-gray-600" placeholder="nome@empresa.com.br">
+                        <label class="block text-sm font-bold text-hacker-400 mb-2">TARGET_EMAIL</label>
+                        <input type="email" name="email" required class="w-full bg-[#050505] border border-gray-700 text-white p-3 focus:border-hacker-400 outline-none transition-all placeholder-gray-700 font-mono" placeholder="root@empresa.com.br">
                     </div>
                 </div>
                 <div class="mb-8">
-                    <label class="block text-sm font-medium text-gray-400 mb-2">Como podemos ajudar?</label>
-                    <textarea name="message" rows="4" required class="w-full bg-gray-900/80 border border-gray-700 rounded-lg text-white p-3.5 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all placeholder-gray-600" placeholder="Descreva sua necessidade de infraestrutura ou auditoria..."></textarea>
+                    <label class="block text-sm font-bold text-hacker-400 mb-2">PAYLOAD (Sua Mensagem)</label>
+                    <textarea name="message" rows="4" required class="w-full bg-[#050505] border border-gray-700 text-white p-3 focus:border-hacker-400 outline-none transition-all placeholder-gray-700 font-mono" placeholder="Descreva sua necessidade de infraestrutura ou auditoria..."></textarea>
                 </div>
-                <button type="submit" class="w-full inline-flex justify-center items-center gap-2 px-8 py-4 text-base font-bold text-white bg-brand-600 rounded-lg hover:bg-brand-500 transition-all shadow-[0_0_20px_rgba(14,165,233,0.3)]">
-                    Enviar Solicitação Segura <i class="ph ph-paper-plane-right text-xl"></i>
+                <button type="submit" class="w-full px-8 py-4 font-bold text-black bg-hacker-400 hover:bg-white transition-all uppercase shadow-[0_0_15px_rgba(0,255,204,0.3)]">
+                    > ENVIAR DADOS CRIPTOGRAFADOS
                 </button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-white/5 py-12 bg-dark">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-2 opacity-80">
-                <i class="ph-fill ph-shield-check text-brand-400 text-2xl"></i>
-                <span class="text-lg font-display font-bold tracking-wide">SPECTER<span class="text-brand-400">SECURITY</span></span>
-            </div>
-            <p class="text-gray-500 text-sm">&copy; 2026 Specter Security. Todos os direitos reservados.</p>
-            <p class="text-gray-500 text-sm">CNPJ: 59.701.640/0001-71</p>
+    <footer class="border-t border-hacker-400/20 py-8 bg-[#020202]">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-hacker-400 font-bold mb-2">SPECTER_SECURITY // 2026</p>
+            <p class="text-gray-600 text-sm">CNPJ: 59.701.640/0001-71</p>
         </div>
     </footer>
 
