@@ -153,11 +153,9 @@
             </div>
             
             <div class="relative max-w-4xl mx-auto">
-                <!-- Central Line -->
                 <div class="absolute inset-0 w-1 bg-hacker-400/20 left-1/2 transform -translate-x-1/2 hidden md:block rounded"></div>
                 
                 <div class="space-y-12">
-                    <!-- 1 -->
                     <div class="flex flex-col md:flex-row items-center justify-between w-full relative">
                         <div class="w-full md:w-5/12 glass-card p-6 border-l-4 border-hacker-400 hover:scale-105 transition-transform duration-300">
                             <h4 class="font-bold text-white text-lg mb-2">> Web Pentest</h4>
@@ -169,7 +167,6 @@
                         <div class="w-full md:w-5/12 hidden md:block"></div>
                     </div>
 
-                    <!-- 2 -->
                     <div class="flex flex-col md:flex-row items-center justify-between w-full relative">
                         <div class="w-full md:w-5/12 hidden md:block"></div>
                         <div class="hidden md:flex w-6 h-6 absolute left-1/2 transform -translate-x-1/2 items-center justify-center bg-[#050505] border-2 border-hacker-400 rounded-full shadow-[0_0_15px_rgba(0,255,204,0.6)] z-10">
@@ -181,7 +178,6 @@
                         </div>
                     </div>
 
-                    <!-- 3 -->
                     <div class="flex flex-col md:flex-row items-center justify-between w-full relative">
                         <div class="w-full md:w-5/12 glass-card p-6 border-l-4 border-hacker-400 hover:scale-105 transition-transform duration-300">
                             <h4 class="font-bold text-white text-lg mb-2">> Red Team Ops</h4>
@@ -193,7 +189,6 @@
                         <div class="w-full md:w-5/12 hidden md:block"></div>
                     </div>
 
-                    <!-- 4 -->
                     <div class="flex flex-col md:flex-row items-center justify-between w-full relative">
                         <div class="w-full md:w-5/12 hidden md:block"></div>
                         <div class="hidden md:flex w-6 h-6 absolute left-1/2 transform -translate-x-1/2 items-center justify-center bg-[#050505] border-2 border-hacker-400 rounded-full shadow-[0_0_15px_rgba(0,255,204,0.6)] z-10">
@@ -205,7 +200,6 @@
                         </div>
                     </div>
                     
-                    <!-- 5 -->
                     <div class="flex flex-col md:flex-row items-center justify-between w-full relative">
                         <div class="w-full md:w-5/12 glass-card p-6 border-l-4 border-hacker-400 hover:scale-105 transition-transform duration-300">
                             <h4 class="font-bold text-white text-lg mb-2">> Cloud Infraestrutura</h4>
@@ -217,7 +211,6 @@
                         <div class="w-full md:w-5/12 hidden md:block"></div>
                     </div>
 
-                    <!-- 6 -->
                     <div class="flex flex-col md:flex-row items-center justify-between w-full relative">
                         <div class="w-full md:w-5/12 hidden md:block"></div>
                         <div class="hidden md:flex w-6 h-6 absolute left-1/2 transform -translate-x-1/2 items-center justify-center bg-[#050505] border-2 border-hacker-400 rounded-full shadow-[0_0_15px_rgba(0,255,204,0.6)] z-10">
@@ -233,36 +226,55 @@
         </div>
     </section>
 
-    <!-- Methodology Section -->
+    <!-- Methodology Section (Staircase Layout) -->
     <section id="metodologia" class="py-24 border-t border-hacker-400/20 bg-[#020202]">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center text-white"><span class="text-neon">/</span> Metodologia</h2>
-            <div class="space-y-4">
-                <div class="glass-card p-6 border border-hacker-400/20 relative overflow-hidden group">
-                    <div class="absolute inset-0 bg-hacker-400/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
-                    <h4 class="font-bold text-white mb-2 text-neon relative z-10">01. Reconhecimento (Recon & OSINT)</h4>
-                    <p class="text-gray-400 text-sm relative z-10">Mapeamos toda a sua superfície de ataque pública e infraestrutura exposta na deep e surface web, identificando portas de entrada invisíveis.</p>
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 text-center text-white"><span class="text-neon">/</span> Metodologia de Ataque</h2>
+            
+            <div class="relative flex flex-col space-y-8 md:space-y-4">
+                
+                <!-- Step 1 -->
+                <div class="w-full md:w-[50%] md:ml-0 glass-card p-6 border-l-4 border-hacker-400 relative hover:-translate-y-1 transition-transform">
+                    <div class="absolute -left-[20px] -top-[20px] w-10 h-10 bg-hacker-900 border-2 border-hacker-400 rounded-full flex items-center justify-center font-bold text-hacker-400 shadow-[0_0_15px_rgba(0,255,204,0.5)] z-10">1</div>
+                    <h4 class="font-bold text-white mb-2 ml-4 text-neon">Reconhecimento (OSINT)</h4>
+                    <p class="text-gray-400 text-sm ml-4">Mapeamento inicial da superfície de ataque, identificando portas de entrada e dados expostos da corporação.</p>
                 </div>
-                <div class="glass-card p-6 border border-hacker-400/20 relative overflow-hidden group">
-                    <div class="absolute inset-0 bg-hacker-400/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
-                    <h4 class="font-bold text-white mb-2 text-neon relative z-10">02. Exploração (Exploitation)</h4>
-                    <p class="text-gray-400 text-sm relative z-10">Nossos especialistas inserem payloads maliciosos controlados, validando cada vulnerabilidade encontrada simulando táticas de ataques reais, sem causar danos operacionais.</p>
+
+                <!-- Step 2 -->
+                <div class="w-full md:w-[50%] md:ml-[10%] glass-card p-6 border-l-4 border-hacker-400 relative hover:-translate-y-1 transition-transform">
+                    <div class="absolute -left-[20px] -top-[20px] w-10 h-10 bg-hacker-900 border-2 border-hacker-400 rounded-full flex items-center justify-center font-bold text-hacker-400 shadow-[0_0_15px_rgba(0,255,204,0.5)] z-10">2</div>
+                    <h4 class="font-bold text-white mb-2 ml-4 text-neon">Scanning e Enumeração</h4>
+                    <p class="text-gray-400 text-sm ml-4">Varredura profunda de redes e aplicações para encontrar CVEs, endpoints desprotegidos e configurações inseguras.</p>
                 </div>
-                <div class="glass-card p-6 border border-hacker-400/20 relative overflow-hidden group">
-                    <div class="absolute inset-0 bg-hacker-400/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
-                    <h4 class="font-bold text-white mb-2 text-neon relative z-10">03. Escalada de Privilégios (Lateral Movement)</h4>
-                    <p class="text-gray-400 text-sm relative z-10">Testamos a profundidade da falha. Uma vez lá dentro, verificamos se o atacante conseguiria acessar contas de administrador ou pular para outras máquinas da rede.</p>
+
+                <!-- Step 3 -->
+                <div class="w-full md:w-[50%] md:ml-[20%] glass-card p-6 border-l-4 border-hacker-400 relative hover:-translate-y-1 transition-transform">
+                    <div class="absolute -left-[20px] -top-[20px] w-10 h-10 bg-hacker-900 border-2 border-hacker-400 rounded-full flex items-center justify-center font-bold text-hacker-400 shadow-[0_0_15px_rgba(0,255,204,0.5)] z-10">3</div>
+                    <h4 class="font-bold text-white mb-2 ml-4 text-neon">Exploração (Exploitation)</h4>
+                    <p class="text-gray-400 text-sm ml-4">Injeção de payloads e bypass de segurança (WAFs/Firewalls) para comprometer o sistema alvo e validar a falha.</p>
                 </div>
-                <div class="glass-card p-6 border border-hacker-400/20 relative overflow-hidden group">
-                    <div class="absolute inset-0 bg-hacker-400/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
-                    <h4 class="font-bold text-white mb-2 text-neon relative z-10">04. Reporte e Plano de Ação</h4>
-                    <p class="text-gray-400 text-sm relative z-10">Entregamos os dossiês documentados (Executivo e Técnico) contendo as Provas de Conceito (PoCs), scripts e o caminho exato para os desenvolvedores aplicarem os patches.</p>
+
+                <!-- Step 4 -->
+                <div class="w-full md:w-[50%] md:ml-[30%] glass-card p-6 border-l-4 border-hacker-400 relative hover:-translate-y-1 transition-transform">
+                    <div class="absolute -left-[20px] -top-[20px] w-10 h-10 bg-hacker-900 border-2 border-hacker-400 rounded-full flex items-center justify-center font-bold text-hacker-400 shadow-[0_0_15px_rgba(0,255,204,0.5)] z-10">4</div>
+                    <h4 class="font-bold text-white mb-2 ml-4 text-neon">Escalada de Privilégios</h4>
+                    <p class="text-gray-400 text-sm ml-4">Movimentação lateral dentro da rede para obter acesso root/admin, testando o verdadeiro impacto do vazamento.</p>
                 </div>
-                <div class="glass-card p-6 border border-hacker-400/20 relative overflow-hidden group">
-                    <div class="absolute inset-0 bg-hacker-400/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
-                    <h4 class="font-bold text-white mb-2 text-neon relative z-10">05. Reteste e Validação Final</h4>
-                    <p class="text-gray-400 text-sm relative z-10">Após sua equipe aplicar as correções, realizamos uma nova bateria de testes nos mesmos pontos para atestar e certificar que a blindagem foi bem sucedida.</p>
+
+                <!-- Step 5 -->
+                <div class="w-full md:w-[50%] md:ml-[40%] glass-card p-6 border-l-4 border-hacker-400 relative hover:-translate-y-1 transition-transform">
+                    <div class="absolute -left-[20px] -top-[20px] w-10 h-10 bg-hacker-900 border-2 border-hacker-400 rounded-full flex items-center justify-center font-bold text-hacker-400 shadow-[0_0_15px_rgba(0,255,204,0.5)] z-10">5</div>
+                    <h4 class="font-bold text-white mb-2 ml-4 text-neon">Reporte e Hardening</h4>
+                    <p class="text-gray-400 text-sm ml-4">Entrega do Dossiê Técnico e Executivo, contendo provas de invasão (PoCs) e o plano de ação exato para remediação.</p>
                 </div>
+
+                <!-- Step 6 -->
+                <div class="w-full md:w-[50%] md:ml-[50%] glass-card p-6 border-l-4 border-hacker-400 relative hover:-translate-y-1 transition-transform bg-hacker-900/30">
+                    <div class="absolute -left-[20px] -top-[20px] w-10 h-10 bg-hacker-400 border-2 border-white rounded-full flex items-center justify-center font-bold text-black shadow-[0_0_20px_rgba(0,255,204,0.8)] z-10">6</div>
+                    <h4 class="font-bold text-white mb-2 ml-4">Reteste Final (Certificação)</h4>
+                    <p class="text-gray-300 text-sm ml-4">Bateria de testes pós-correção para garantir que o patch foi efetivo e que o ambiente está ciber-resiliente.</p>
+                </div>
+
             </div>
         </div>
     </section>
